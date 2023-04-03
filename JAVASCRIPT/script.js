@@ -95,62 +95,55 @@ addNoteBtn.addEventListener("click", function () {
 });
 // ! plus buttun to ==== writing container
 
-var cardnote = document.getElementById("displayallbox");
 
-// ! get info to local storage
+const storageInput = document.querySelector("#titall");
+const buttonns = document.querySelector("#savebuttunwrite");
+let recordsDisplay = document.querySelector("#displayallbox");
+let usserarry = [];
 
-var data = localStorage.getItem("noteS");
-if (data != null) {
-  useraRRAY = JSON.parse(data);
+let objstr = localStorage.getItem("DATA");
+if (objstr != null) {
+  usserarry = JSON.parse(objstr);
 }
 
 displayinfo();
-// ! get info to local storage
-// ! save info to local storage
-var savebtn = document.getElementById("savebuttunwrite");
-titalinput = document.getElementById("titall");
-discript = document.getElementById("discript");
-var useraRRAY = [];
-savebtn.addEventListener("click", () => {
-  var titalname = titalinput.value;
-  var discrname = discript.value;
-  useraRRAY.push({ tital: titalname, discription: discrname });
-  SAveinFo(useraRRAY);
-});
-function SAveinFo(useraRRAY) {
-  var strr = JSON.stringify(useraRRAY);
-  localStorage.setItem("noteS", strr);
-}
-// ! save info to local storage s
 
-// function DisplayInfo() {
-//   let statement = "";
-//   useraRRAY.forEach((user) => {
-//     statement += `<div class="boxes" id="cardnotes" >
-//     <div class="titalbox">${user.tital}</div>
-//     <div class="boxcontent">
-//    gghhhhhhhh
-//     </div>
-//     <div class="timebox">Yesterday 4:18 PM</div>
-//   </div>`
-//   });
-//   cardnote.innerHTML = statement;
-// }
+// ! submit button info
+
+buttonns.onclick = () => {
+  const name = storageInput.value;
+  usserarry.push({ TITALL: name });
+  saveinfo(usserarry);
+  storageInput.value = "";
+  displayinfo();
+};
+
+
+// ! save info
+
+function saveinfo() {
+  let stringyfii = JSON.stringify(usserarry);
+  localStorage.setItem("DATA", stringyfii);
+}
+
+// ! display info
 
 function displayinfo() {
   let statement = "";
-  useraRRAY.forEach((user) => {
-    statement += `<div class="boxes" id="cardnotes" >
-    <div class="titalbox">raviggggggggggiiii</div>
-    <div class="boxcontent">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-      Numquam obcaecati laborum dicta quidem ipsum ipsam accusantium
-      recusandae sint tempore fugiat?
-    </div>
-    <div class="timebox">Yesterday 4:18 PM</div>
-  </div>`;
+  usserarry.forEach((user) => {
+    statement += `
+    <div class="boxes" id="cardnotes" >
+      <div class="titalbox">${user.TITALL}</div>
+      <div class="boxcontent">
+       jj thobson
+      </div>
+      <div class="timebox">Yesterday 4:18 PM</div>
+    </div>`;
   });
-  cardnote.innerHTML = statement;
+
+  recordsDisplay.innerHTML = statement;
 }
 
-// displayallbox
+// // ! delete info
+
+// function deleteinfo() {}
