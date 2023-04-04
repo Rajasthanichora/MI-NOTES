@@ -36,67 +36,28 @@ cancelbtn.addEventListener("click", function () {
 
 // ! !!!!!!!!!!!11111111111
 
-// var boxclick = document.querySelectorAll(".boxes");
-
-// boxclick.forEach((userItem) => {
-//   userItem.addEventListener("click", function () {
-//     boxxez = this;
-
-//     document.getElementById("searchbar").style.display = "none";
-//     boxxez.style.borderRadius = "0px";
-//     boxxez.style.margin = "0px";
-//     boxxez.style.flexBasis = "auto";
-//     document.getElementById("advertisment").style.backgroundColor = "blue";
-//     document.getElementById("convertsection").style.backgroundColor = "white";
-//     document.body.style.backgroundColor = "white";
-
-// // // !tital box
-// //     var titalBoxes = document.querySelectorAll(".titalbox");
-// //     titalBoxes.forEach((titalall) => {
-// //       titalall.style.width = "100%";
-// //       // titalall.style.color = "red";
-// //       // titalall.style.color = "red";
-// //       // titalall.style.color = "red";
-
-// //     })
-
-//     // !display none
-//     var allboxes = document.querySelectorAll(".boxes");
-//     allboxes.forEach((allbxx) => {
-//       allbxx.style.display = "none";
-//       boxxez.style.display = "unset";
-//     });
-
-//     // boxclicdffk.style.color = "red";
-//   });
-// });
-
-// function showAllNotes(){
-//   // addNoteContainer.style.display = 'none';
-//   // let allNotes;
-//   let notes = localStorage.getItem("notes")
-//   // if(notes === null){
-//   //     allNotes =[]
-//   // }else{
-//   //     allNotes = JSON.parse(notes);
-//   // }
-// }
-
-// showAllNotes()
-
-// console.log(notes)
-
 // ! plus buttun to ==== writing container
 var addNoteContainer = document.getElementById("addNoteContainer");
 addNoteContainer.style.display = "none";
 var addNoteBtn = document.getElementById("addboxxbtnn");
 addNoteBtn.addEventListener("click", function () {
-  addNoteContainer.style.display = "unset";
+  addNoteContainer.style.display = "flex";
+  addNoteContainer.style.flexDirection = "column";
+  addNoteContainer.style.justifyContent = "center";
+  addNoteContainer.style.alignItems = "center";
+
+  // ye niche baki screen gayab ke liye
+  document.getElementById("searchbar").style.display = "none";
+  document.getElementById("displayallbox").style.display = "none";
+  document.getElementById("convertsection").style.backgroundColor = "white";
+  document.body.style.backgroundColor = "white";
+  addNoteBtn.style.display = "none";
 });
+
 // ! plus buttun to ==== writing container
 
-
 const storageInput = document.querySelector("#titall");
+const DiscInput = document.querySelector("#discript");
 const buttonns = document.querySelector("#savebuttunwrite");
 let recordsDisplay = document.querySelector("#displayallbox");
 let usserarry = [];
@@ -112,12 +73,12 @@ displayinfo();
 
 buttonns.onclick = () => {
   const name = storageInput.value;
-  usserarry.push({ TITALL: name });
+  const discss = DiscInput.value;
+  usserarry.push({ TITALL: name, DISCRIPTION: discss });
   saveinfo(usserarry);
   storageInput.value = "";
-  displayinfo();
+  // displayinfo();
 };
-
 
 // ! save info
 
@@ -135,7 +96,7 @@ function displayinfo() {
     <div class="boxes" id="cardnotes" >
       <div class="titalbox">${user.TITALL}</div>
       <div class="boxcontent">
-       jj thobson
+      ${user.DISCRIPTION}
       </div>
       <div class="timebox">Yesterday 4:18 PM</div>
     </div>`;
@@ -147,3 +108,5 @@ function displayinfo() {
 // // ! delete info
 
 // function deleteinfo() {}
+
+//
