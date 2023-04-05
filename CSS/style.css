@@ -46,6 +46,9 @@
   #advertisment {
     height: 4%;
     width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
   }
   #searchbar {
     height: auto;
@@ -143,6 +146,7 @@
   height: 100px;
   padding: 7px;
   border-radius: 11px;
+  position: relative;
 }
 .titalbox {
   font-size: 15px;
@@ -179,6 +183,7 @@
   padding: 0.3em 0.5em 0.4em 0.5em;
   right: 10vw;
   bottom: 12vh;
+  z-index: 1;
 }
 
 #addboxxbtnn:active {
@@ -245,10 +250,65 @@
 }
 /* ! ==> arrow buttun save btn start */
 
-#form{
-
-background-color: white;
-color: black;
-
+#form {
+  background-color: white;
+  color: black;
 }
 
+/* ! icons start */
+#deleteicon {
+  font-size: 2em;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0.3em;
+  position: relative;
+  color: #d78246;
+}
+#deleteicon:active {
+  background-color: rgb(212, 212, 212);
+  border-radius: 50%;
+}
+#threedoticon {
+  height: 100%;
+  font-size: 2em;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  right: 5vw;
+}
+#threedoticon:active {
+  background-color: rgb(212, 212, 212);
+  border-radius: 50%;
+}
+.deletemycard {
+  font-size: 2em;
+  background: none;
+  border: none;
+  margin: 0px;
+  padding: 0;
+  position: absolute;
+  color: #d78246;
+  right: 0.5vw;
+  bottom: 1.5vh;
+  z-index: 1;
+}
+/* ! icons end */
+
+#iconcard {
+  background-color: white;
+  height: 10vh;
+  padding: 7px;
+  border-radius: 11px;
+  position: absolute;
+  width: 13vw;
+  right: 9vw;
+  top: 4vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: 1px #e3e3e3 solid;
+  z-index: 1;
+}

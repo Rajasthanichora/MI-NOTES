@@ -11,20 +11,21 @@ searchh.addEventListener("click", function () {
   //   ?  touch on screen anywhere
   var contentsection = document.getElementById("contentsec");
   contentsection.addEventListener("click", function () {
-    document.getElementById("advertisment").style.display = "block";
+    document.getElementById("advertisment").style.display = "flex";
     document.getElementById("searchbar").style.display = "block";
     document.getElementById("cancelbtnn").style.display = "none";
-    document.getElementById("formm").style.width = "90vw";
+    document.getElementById("formm").style.width = "80vw";
     document.getElementById("formm").style.transition = "0.3s";
     document.getElementById("searchbar").style.display = "flex";
     document.getElementById("searchbar").style.justifyContent = "center";
     document.getElementById("searchbar").style.alignItems = "center";
+    document.getElementById("threedoticon").style.display = "unset";
   });
 });
 // ? click on  cancel btn
 var cancelbtn = document.getElementById("cancelbtnn");
 cancelbtn.addEventListener("click", function () {
-  document.getElementById("advertisment").style.display = "block";
+  document.getElementById("advertisment").style.display = "flex";
   document.getElementById("searchbar").style.display = "block";
   document.getElementById("cancelbtnn").style.display = "none";
   document.getElementById("formm").style.width = "80vw";
@@ -32,7 +33,6 @@ cancelbtn.addEventListener("click", function () {
   document.getElementById("searchbar").style.display = "flex";
   document.getElementById("searchbar").style.justifyContent = "center";
   document.getElementById("searchbar").style.alignItems = "center";
-  // document.getElementById("searchbar").style.flexBasis = "auto";
 });
 // ! SEARCH BAR END
 //////////////////////////////////////////////
@@ -76,15 +76,15 @@ displayinfo();
 buttonns.onclick = () => {
   const name = storageInput.value;
   const discss = DiscInput.value;
-  if(edit_id!= null){
-usserarry.splice(edit_id,1,{ TITALL: name, DISCRIPTION: discss })
-edit_id = null;
-  }else{
+  if (edit_id != null) {
+    usserarry.splice(edit_id, 1, { TITALL: name, DISCRIPTION: discss });
+    edit_id = null;
+  } else {
     usserarry.push({ TITALL: name, DISCRIPTION: discss });
   }
   saveinfo(usserarry);
   storageInput.value = "";
-    //  stylingggggggg
+  //  stylingggggggg
   displayinfo();
   document.getElementById("searchbar").style.display = "unset";
   document.getElementById("displayallbox").style.display = "unset";
@@ -99,6 +99,14 @@ edit_id = null;
   document.getElementById("searchbar").style.justifyContent = "center";
   document.getElementById("searchbar").style.alignItems = "center";
   buttonns.innerHTML = buttunText;
+
+  // const carddate = new Date().toLocaleDateString("en-us", {
+  //   hour : "numeric",
+  //   minute : "numeric",
+  //   year: "numeric",
+  //   month: "short",
+  //   day: "numeric",
+  // });
 };
 // ! save button info end tick tick
 
@@ -106,54 +114,64 @@ edit_id = null;
 function saveinfo() {
   let stringyfii = JSON.stringify(usserarry);
   localStorage.setItem("DATA", stringyfii);
-  displayinfo()
+  displayinfo();
 }
 // ! save info start
 
 // ! display info start
 function displayinfo() {
   let statement = "";
-  usserarry.forEach((user,i) => {
+  usserarry.forEach((user, i) => {
     statement += `
-    <div class="boxes" id="cardnotes" onclick="editCard(${i})" >
+    <div class="boxes" id="cardnotes">
+    <div id="contentcardss" onclick="editCard(${i})" >
       <div class="titalbox">${user.TITALL}</div>
       <div class="boxcontent">
       ${user.DISCRIPTION}
       </div>
-      <div class="timebox">Yesterday 4:18 PM</div>
-      <button type="button" id="deletemycard" onclick="deleteinfo(${i})">delete</button>
+      <div class="timebox"></div>
+      </div>
+      <button type="button" class="material-symbols-rounded deletemycard" onclick="deleteinfo(${i})">delete_forever</button>
     </div>`;
   });
   recordsDisplay.innerHTML = statement;
 }
 // ! display info end
 
-
 // ! DELETE CARDS START
 function deleteinfo(id) {
-usserarry.splice(id,1);
-saveinfo()
+  usserarry.splice(id, 1);
+  saveinfo();
 }
 // ! DELETE CARDS END
 
 // ! EDIT CARD START
-function editCard(id){
-edit_id = id;
-storageInput.value = usserarry[id].TITALL;
-DiscInput.value = usserarry[id].DISCRIPTION;
-// styling/////////////////
-buttonns.innerHTML = '&#10004';
-document.getElementById("savebuttunwrite").style.top = "1vh";
-document.getElementById("searchbar").style.display = "none";
-document.getElementById("displayallbox").style.display = "none";
-document.getElementById("convertsection").style.backgroundColor = "white";
-document.body.style.backgroundColor = "white";
-addNoteBtn.style.display = "none";
-addNoteContainer.style.display = "flex";
-addNoteContainer.style.flexDirection = "column";
-addNoteContainer.style.justifyContent = "center";
-addNoteContainer.style.alignItems = "center";
-displayinfo()
+function editCard(id) {
+  edit_id = id;
+  storageInput.value = usserarry[id].TITALL;
+  DiscInput.value = usserarry[id].DISCRIPTION;
+  // styling/////////////////
+  buttonns.innerHTML = "&#10004";
+  document.getElementById("savebuttunwrite").style.top = "1vh";
+  document.getElementById("searchbar").style.display = "none";
+  document.getElementById("displayallbox").style.display = "none";
+  document.getElementById("convertsection").style.backgroundColor = "white";
+  document.body.style.backgroundColor = "white";
+  addNoteBtn.style.display = "none";
+  addNoteContainer.style.display = "flex";
+  addNoteContainer.style.flexDirection = "column";
+  addNoteContainer.style.justifyContent = "center";
+  addNoteContainer.style.alignItems = "center";
+  displayinfo();
 }
 // ! EDIT CARD END
 
+// ! 333 dot icon start
+function threedotbtn() {
+  document.getElementById("iconcard").style.display = "flex";
+  var contentsection = document.getElementById("contentsec");
+  contentsection.addEventListener("click", function () {
+    document.getElementById("iconcard").style.display = "none";
+  });
+}
+// ! 333 dot icon end
