@@ -216,10 +216,10 @@ searchinput.addEventListener("input", () => {
 function Darklightmode() {
   document.body.classList.toggle("dark-theme");
   if (document.body.classList.contains("dark-theme")) {
-    document.getElementById("lightbtnn").style.display = "block ruby";
+    document.getElementById("lightbtnn").style.display = "unset";
     document.getElementById("darkbtnn").style.display = "none";
   } else {
-    document.getElementById("darkbtnn").style.display = "block ruby";
+    document.getElementById("darkbtnn").style.display = "unset";
     document.getElementById("lightbtnn").style.display = "none";
   }
 }
