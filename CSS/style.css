@@ -1,14 +1,33 @@
 @media screen and (max-width: 500px) {
   /* !font start */
+  * {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
   /* !font end */
   /* ////////////////////////// */
   /* !color variable start */
   :root {
     --primary-color: white;
-    --border-color: none;
+    --black-color: black;
+    --body-color: #f2f2f2;
+    --form-color: #e6e6e6;
+    --savebuttun-color: rgb(90, 90, 90);
+    --iconcard-color: #e3e3e3;
+    --threedoticon-color: rgb(212, 212, 212);
+    --script-color: white;
   }
-  /* .dark-theme { */
-  /* } */
+  .dark-theme {
+    --primary-color: #464646;
+    --black-color: white;
+    --body-color: black;
+    --form-color: #464646;
+    --savebuttun-color: rgb(90, 90, 90);
+    --iconcard-color: #e3e3e3;
+    --threedoticon-color: rgb(212, 212, 212);
+    --script-color: black;
+  }
+
   /* !color variable end */
   /* ////////////////////////// */
   /* ! html & body start */
@@ -23,7 +42,7 @@
     align-items: center;
     flex-direction: column;
     background: transparent;
-    background-color: #f2f2f2;
+    background-color: var(--body-color);
   }
   /* ! html & body end */
   /* ////////////////////////// */
@@ -36,7 +55,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f2f2f2;
+    background-color: var(--body-color);
   }
   #allcontents {
     height: 100%;
@@ -65,14 +84,15 @@
     margin-top: 8px;
   }
 
-  form {
-    color: #555;
+  #formm {
     display: flex;
     padding: 9px;
     border-radius: 40px;
     border: none;
-    background-color: #e6e6e6;
-    width: 90vw;
+    background-color: var(--form-color);
+    width: 85vw;
+    justify-content: center;
+    align-items: center;
   }
 
   input[type="search"] {
@@ -83,10 +103,11 @@
     border-radius: unset;
     width: 100%;
     font-size: 9px;
+    color: var(--black-color);
   }
 
   input[type="search"]::placeholder {
-    color: rgb(0, 0, 0);
+    color: var(--black-color);
     font-size: 13px;
     text-align: left;
   }
@@ -99,20 +120,9 @@
     color: transparent;
   }
 
-  button[type="submit"] {
-    text-indent: -999px;
-    overflow: hidden;
-    width: 6vw;
-    padding: 0;
-    margin: 0;
-    border: 1px solid transparent;
-    border-radius: inherit;
-    background: transparent
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
-      no-repeat center;
-    cursor: pointer;
-    margin-left: 3px;
-    margin-top: 1px;
+  #searchbtnn {
+    font-size: 6vw;
+    color: var(--black-color);
   }
 
   #cancelbtnn {
@@ -142,11 +152,12 @@
 .boxes {
   flex-basis: calc(50% - 13vw);
   margin: 5px;
-  background-color: white;
+  background-color: var(--primary-color);
   height: 100px;
   padding: 7px;
   border-radius: 11px;
   position: relative;
+  color: var(--black-color);
 }
 .titalbox {
   font-size: 15px;
@@ -155,6 +166,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   height: 22px;
+  color: var(--black-color);
 }
 .boxcontent {
   height: 56px;
@@ -168,7 +180,7 @@
   text-align: left;
   margin-top: 7px;
   width: 90%;
-  color: #555;
+  color: var(--black-color);
 }
 
 /* btnnn */
@@ -225,22 +237,13 @@
   border: none;
   outline: none;
 }
-
-/* #savebuttunwrite{
-  display: none;
-} */
-
-/* 
-@media screen and (max-width: 256px) {
-}  */
-
 /* ! ==> arrow buttun save btn start */
 #savebuttunwrite {
   background: none;
   border: none;
   margin: 0;
   padding: 0;
-  color: black;
+  color: var(--black-color);
   position: absolute;
   top: 0vh;
   left: 5vw;
@@ -248,13 +251,13 @@
 }
 
 #savebuttunwrite:active {
-  color: rgb(90, 90, 90);
+  color: var(--savebuttun-color);
 }
 /* ! ==> arrow buttun save btn start */
 
 #form {
-  background-color: white;
-  color: black;
+  background-color: var(--script-color);
+  color: var(--black-color);
 }
 
 /* ! icons start */
@@ -268,7 +271,7 @@
   color: #d78246;
 }
 #deleteicon:active {
-  background-color: rgb(212, 212, 212);
+  background-color: var(--threedoticon-color);
   border-radius: 50%;
 }
 #threedoticon {
@@ -281,9 +284,10 @@
   position: relative;
   right: 5vw;
   background: none;
+  color: var(--black-color);
 }
 #threedoticon:active {
-  background-color: rgb(212, 212, 212);
+  background-color: var(--threedoticon-color);
   border-radius: 50%;
 }
 .deletemycard {
@@ -301,7 +305,7 @@
 /* ! icons end */
 
 #iconcard {
-  background-color: white;
+  background-color: var(--primary-color);
   height: auto;
   padding: 7px;
   border-radius: 11px;
@@ -312,11 +316,27 @@
   display: none;
   align-items: center;
   justify-content: center;
-  border: 1px #e3e3e3 solid;
+  border: 1px var(--iconcard-color) solid;
   z-index: 1;
+  flex-direction: column;
 }
-#iconcard a{
-  color: black;
+#iconcard a {
+  color: var(--black-color);
   text-decoration: none;
   cursor: pointer;
 }
+/* ? DARK MODE BTN START */
+#lightbtnn {
+  display: none;
+  font-size: 3vw;
+  color: var(--black-color);
+}
+#darkbtnn {
+  display: block ruby;
+  font-size: 3vw;
+}
+#darkmodebtn {
+  background: none;
+  border: none;
+}
+/* ? DARK MODE BTN END */
