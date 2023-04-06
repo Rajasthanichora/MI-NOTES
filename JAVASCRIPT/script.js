@@ -150,8 +150,7 @@ function editCard(id) {
   storageInput.value = usserarry[id].TITALL;
   DiscInput.value = usserarry[id].DISCRIPTION;
   // styling/////////////////
-  buttonns.innerHTML = "&#10004";
-  document.getElementById("savebuttunwrite").style.top = "1vh";
+  buttonns.innerHTML = "&#10003;";
   document.getElementById("searchbar").style.display = "none";
   document.getElementById("displayallbox").style.display = "none";
   document.getElementById("convertsection").style.backgroundColor = "white";
