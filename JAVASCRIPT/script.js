@@ -20,12 +20,17 @@ cancelbtn.addEventListener("click", function () {
   document.getElementById("searchbar").style.display = "flex";
   document.getElementById("searchbar").style.justifyContent = "center";
   document.getElementById("searchbar").style.alignItems = "center";
-  var searchbtnn = document.getElementById("searchbarbtnn")
-  searchbtnn.value = "";  
+  var searchbtnn = document.getElementById("searchbarbtnn");
+  searchbtnn.value = "";
 });
 // ! SEARCH BAR END
 //////////////////////////////////////////////
 ///////////////////////////////////////////////
+document.getElementById("titall").style.backgroundColor = "var(--script-color)";
+document.getElementById("titall").style.color = "var(--black-color)";
+document.getElementById("discript").style.backgroundColor =
+  "var(--script-color)";
+document.getElementById("discript").style.color = "var(--black-color)";
 // ! plus buttun to ==== writing container
 var addNoteContainer = document.getElementById("addNoteContainer");
 addNoteContainer.style.display = "none";
@@ -39,10 +44,17 @@ addNoteBtn.addEventListener("click", function () {
   // ye niche baki screen gayab ke liye
   document.getElementById("searchbar").style.display = "none";
   document.getElementById("displayallbox").style.display = "none";
-  document.getElementById("convertsection").style.backgroundColor = "white";
-  document.body.style.backgroundColor = "white";
+  document.getElementById("convertsection").style.backgroundColor =
+    "var(--script-color)";
+  document.body.style.backgroundColor = "var(--script-color)";
+  document.getElementById("titall").style.backgroundColor =
+    "var(--script-color)";
+  document.getElementById("titall").style.color = "var(--black-color)";
+  document.getElementById("discript").style.backgroundColor =
+    "var(--script-color)";
+  document.getElementById("discript").style.color = "var(--black-color)";
   addNoteBtn.style.display = "none";
-  var searchbtnn = document.getElementById("searchbarbtnn")
+  var searchbtnn = document.getElementById("searchbarbtnn");
   searchbtnn.value = "";
   document.getElementById("form").reset();
 });
@@ -94,8 +106,15 @@ buttonns.onclick = () => {
   document.getElementById("searchbar").style.display = "unset";
   document.getElementById("displayallbox").style.display = "unset";
   addNoteContainer.style.display = "none";
-  document.getElementById("convertsection").style.backgroundColor = "#f2f2f2";
-  document.body.style.backgroundColor = "#f2f2f2";
+  document.getElementById("convertsection").style.backgroundColor =
+    "var(--body-color)";
+  document.body.style.backgroundColor = "var(--body-color)";
+  document.getElementById("titall").style.backgroundColor =
+    "var(--script-color)";
+  document.getElementById("titall").style.color = "var(--black-color)";
+  document.getElementById("discript").style.backgroundColor =
+    "var(--script-color)";
+  document.getElementById("discript").style.color = "var(--black-color)";
   addNoteBtn.style.display = "unset";
   recordsDisplay.style.display = "flex";
   recordsDisplay.style.justifyContent = "center";
@@ -103,7 +122,8 @@ buttonns.onclick = () => {
   document.getElementById("searchbar").style.display = "flex";
   document.getElementById("searchbar").style.justifyContent = "center";
   document.getElementById("searchbar").style.alignItems = "center";
-  var searchbtnn = document.getElementById("searchbarbtnn")
+
+  var searchbtnn = document.getElementById("searchbarbtnn");
   searchbtnn.value = "";
   buttonns.innerHTML = buttunText;
 };
@@ -153,14 +173,15 @@ function editCard(id) {
   buttonns.innerHTML = "&#10003;";
   document.getElementById("searchbar").style.display = "none";
   document.getElementById("displayallbox").style.display = "none";
-  document.getElementById("convertsection").style.backgroundColor = "white";
-  document.body.style.backgroundColor = "white";
+  document.getElementById("convertsection").style.backgroundColor =
+    "var(--script-color)";
+  document.body.style.backgroundColor = "var(--script-color)";
   addNoteBtn.style.display = "none";
   addNoteContainer.style.display = "flex";
   addNoteContainer.style.flexDirection = "column";
   addNoteContainer.style.justifyContent = "center";
   addNoteContainer.style.alignItems = "center";
-  var searchbtnn = document.getElementById("searchbarbtnn")
+  var searchbtnn = document.getElementById("searchbarbtnn");
   searchbtnn.value = "";
   displayinfo();
 }
@@ -190,3 +211,16 @@ searchinput.addEventListener("input", () => {
     }
   });
 });
+
+// ! DARK MODE START
+function Darklightmode() {
+  document.body.classList.toggle("dark-theme");
+  if (document.body.classList.contains("dark-theme")) {
+    document.getElementById("lightbtnn").style.display = "block ruby";
+    document.getElementById("darkbtnn").style.display = "none";
+  } else {
+    document.getElementById("darkbtnn").style.display = "block ruby";
+    document.getElementById("lightbtnn").style.display = "none";
+  }
+}
+// ! DARK MODE END
