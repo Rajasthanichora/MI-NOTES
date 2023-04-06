@@ -74,13 +74,27 @@ displayinfo();
 
 // ! save button info start tick tick
 buttonns.onclick = () => {
+  // ! dateeeeeeeee start
+  const carddate = new Date().toLocaleDateString("en-us", {
+    hour: "numeric",
+    minute: "numeric",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+  // ! dateeeeeeeee end
   const name = storageInput.value;
   const discss = DiscInput.value;
+  const date = carddate;
   if (edit_id != null) {
-    usserarry.splice(edit_id, 1, { TITALL: name, DISCRIPTION: discss });
+    usserarry.splice(edit_id, 1, {
+      TITALL: name,
+      DISCRIPTION: discss,
+      DATE: date,
+    });
     edit_id = null;
   } else {
-    usserarry.push({ TITALL: name, DISCRIPTION: discss });
+    usserarry.push({ TITALL: name, DISCRIPTION: discss, DATE: date });
   }
   saveinfo(usserarry);
   storageInput.value = "";
@@ -99,13 +113,6 @@ buttonns.onclick = () => {
   document.getElementById("searchbar").style.justifyContent = "center";
   document.getElementById("searchbar").style.alignItems = "center";
   buttonns.innerHTML = buttunText;
-  // const carddate = new Date().toLocaleDateString("en-us", {
-  //   hour : "numeric",
-  //   minute : "numeric",
-  //   year: "numeric",
-  //   month: "short",
-  //   day: "numeric",
-  // });
 };
 // ! save button info end tick tick
 
@@ -128,7 +135,7 @@ function displayinfo() {
       <div class="boxcontent">
       ${user.DISCRIPTION}
       </div>
-      <div class="timebox"></div>
+      <div class="timebox">${user.DATE}</div>
       </div>
       <button type="button" class="material-symbols-rounded deletemycard" onclick="deleteinfo(${i})">delete_forever</button>
     </div>`;
@@ -173,4 +180,3 @@ function threedotbtn() {
   });
 }
 // ! 333 dot icon end
-
