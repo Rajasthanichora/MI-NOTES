@@ -8,19 +8,6 @@ searchh.addEventListener("click", function () {
   document.getElementById("cancelbtnn").style.marginLeft = "10px";
   document.getElementById("formm").style.width = "60vw";
   document.getElementById("formm").style.transition = "0.4s";
-  //   ?  touch on screen anywhere
-  var contentsection = document.getElementById("contentsec");
-  contentsection.addEventListener("click", function () {
-    document.getElementById("advertisment").style.display = "flex";
-    document.getElementById("searchbar").style.display = "block";
-    document.getElementById("cancelbtnn").style.display = "none";
-    document.getElementById("formm").style.width = "80vw";
-    document.getElementById("formm").style.transition = "0.3s";
-    document.getElementById("searchbar").style.display = "flex";
-    document.getElementById("searchbar").style.justifyContent = "center";
-    document.getElementById("searchbar").style.alignItems = "center";
-    document.getElementById("threedoticon").style.display = "unset";
-  });
 });
 // ? click on  cancel btn
 var cancelbtn = document.getElementById("cancelbtnn");
@@ -33,6 +20,8 @@ cancelbtn.addEventListener("click", function () {
   document.getElementById("searchbar").style.display = "flex";
   document.getElementById("searchbar").style.justifyContent = "center";
   document.getElementById("searchbar").style.alignItems = "center";
+  var searchbtnn = document.getElementById("searchbarbtnn")
+  searchbtnn.value = "";  
 });
 // ! SEARCH BAR END
 //////////////////////////////////////////////
@@ -53,6 +42,8 @@ addNoteBtn.addEventListener("click", function () {
   document.getElementById("convertsection").style.backgroundColor = "white";
   document.body.style.backgroundColor = "white";
   addNoteBtn.style.display = "none";
+  var searchbtnn = document.getElementById("searchbarbtnn")
+  searchbtnn.value = "";
   document.getElementById("form").reset();
 });
 
@@ -112,6 +103,8 @@ buttonns.onclick = () => {
   document.getElementById("searchbar").style.display = "flex";
   document.getElementById("searchbar").style.justifyContent = "center";
   document.getElementById("searchbar").style.alignItems = "center";
+  var searchbtnn = document.getElementById("searchbarbtnn")
+  searchbtnn.value = "";
   buttonns.innerHTML = buttunText;
 };
 // ! save button info end tick tick
@@ -167,6 +160,8 @@ function editCard(id) {
   addNoteContainer.style.flexDirection = "column";
   addNoteContainer.style.justifyContent = "center";
   addNoteContainer.style.alignItems = "center";
+  var searchbtnn = document.getElementById("searchbarbtnn")
+  searchbtnn.value = "";
   displayinfo();
 }
 // ! EDIT CARD END
@@ -180,3 +175,18 @@ function threedotbtn() {
   });
 }
 // ! 333 dot icon end
+
+var searchinput = document.getElementById("searchbarbtnn");
+
+searchinput.addEventListener("input", () => {
+  var searchinputvalue = searchinput.value.toLowerCase();
+  var allcardssearch = document.getElementsByClassName("boxes");
+  Array.from(allcardssearch).forEach((ele) => {
+    let cardtextts = ele.getElementsByClassName("boxcontent")[0].innerText;
+    if (cardtextts.toLowerCase().includes(searchinputvalue)) {
+      ele.style.display = "block";
+    } else {
+      ele.style.display = "none";
+    }
+  });
+});

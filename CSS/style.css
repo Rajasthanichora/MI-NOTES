@@ -302,11 +302,11 @@
 
 #iconcard {
   background-color: white;
-  height: 10vh;
+  height: auto;
   padding: 7px;
   border-radius: 11px;
   position: absolute;
-  width: 13vw;
+  width: auto;
   right: 9vw;
   top: 4vh;
   display: none;
@@ -314,4 +314,9 @@
   justify-content: center;
   border: 1px #e3e3e3 solid;
   z-index: 1;
+}
+#iconcard a{
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
