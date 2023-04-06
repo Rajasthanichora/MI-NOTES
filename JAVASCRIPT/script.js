@@ -1,4 +1,5 @@
 // ! SEARCH BAR END START
+document.getElementById("savebuttunwrite").style.display = "none";
 // ? click search baar
 var searchh = document.getElementById("searchbarbtnn");
 searchh.addEventListener("click", function () {
@@ -8,6 +9,7 @@ searchh.addEventListener("click", function () {
   document.getElementById("cancelbtnn").style.marginLeft = "10px";
   document.getElementById("formm").style.width = "60vw";
   document.getElementById("formm").style.transition = "0.4s";
+  document.getElementById("savebuttunwrite").style.display = "none";
   //   ?  touch on screen anywhere
   var contentsection = document.getElementById("contentsec");
   contentsection.addEventListener("click", function () {
@@ -20,6 +22,7 @@ searchh.addEventListener("click", function () {
     document.getElementById("searchbar").style.justifyContent = "center";
     document.getElementById("searchbar").style.alignItems = "center";
     document.getElementById("threedoticon").style.display = "unset";
+    document.getElementById("savebuttunwrite").style.display = "none";
   });
 });
 // ? click on  cancel btn
@@ -33,6 +36,7 @@ cancelbtn.addEventListener("click", function () {
   document.getElementById("searchbar").style.display = "flex";
   document.getElementById("searchbar").style.justifyContent = "center";
   document.getElementById("searchbar").style.alignItems = "center";
+  document.getElementById("savebuttunwrite").style.display = "none";
 });
 // ! SEARCH BAR END
 //////////////////////////////////////////////
@@ -46,7 +50,6 @@ addNoteBtn.addEventListener("click", function () {
   addNoteContainer.style.flexDirection = "column";
   addNoteContainer.style.justifyContent = "center";
   addNoteContainer.style.alignItems = "center";
-
   // ye niche baki screen gayab ke liye
   document.getElementById("searchbar").style.display = "none";
   document.getElementById("displayallbox").style.display = "none";
@@ -54,6 +57,7 @@ addNoteBtn.addEventListener("click", function () {
   document.body.style.backgroundColor = "white";
   addNoteBtn.style.display = "none";
   document.getElementById("form").reset();
+  document.getElementById("savebuttunwrite").style.display = "block";
 });
 
 // ! plus buttun to ==== writing container end
@@ -98,6 +102,8 @@ buttonns.onclick = () => {
   document.getElementById("searchbar").style.display = "flex";
   document.getElementById("searchbar").style.justifyContent = "center";
   document.getElementById("searchbar").style.alignItems = "center";
+  document.getElementById("savebuttunwrite").style.display = "none";
+
   buttonns.innerHTML = buttunText;
 
   // const carddate = new Date().toLocaleDateString("en-us", {
@@ -162,6 +168,7 @@ function editCard(id) {
   addNoteContainer.style.flexDirection = "column";
   addNoteContainer.style.justifyContent = "center";
   addNoteContainer.style.alignItems = "center";
+  document.getElementById("savebuttunwrite").style.display = "block";
   displayinfo();
 }
 // ! EDIT CARD END
