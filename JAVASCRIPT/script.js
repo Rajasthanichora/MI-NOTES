@@ -99,7 +99,6 @@ buttonns.onclick = () => {
   document.getElementById("searchbar").style.justifyContent = "center";
   document.getElementById("searchbar").style.alignItems = "center";
   buttonns.innerHTML = buttunText;
-
   // const carddate = new Date().toLocaleDateString("en-us", {
   //   hour : "numeric",
   //   minute : "numeric",
@@ -175,3 +174,4 @@ function threedotbtn() {
   });
 }
 // ! 333 dot icon end
+
