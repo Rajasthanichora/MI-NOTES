@@ -75,7 +75,7 @@
       background-repeat: no-repeat;
     }
     #allcontents {
-      height: 90vh;
+      height: 83vh;
       width: 80vw;
       background-color: white;
       border-radius: 15px;
@@ -83,6 +83,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-bottom: 7vh;
     }
 
     #content {
@@ -119,13 +120,17 @@
       border: none;
       border-radius: 0.8vw;
       box-shadow: 0 2px #999;
-      margin-top: 2vh;
-      margin-left: 45vw;
+      margin: 0;
     }
     #home:active {
       background-color: #d02e2e;
       box-shadow: 0 1px #666;
       transform: translateY(1px);
+    }
+    #buttunhome {
+      width: 83%;
+      text-align: end;
+      margin-top: 2vh;
     }
   </style>
   <!-- ? css start -->
@@ -134,7 +139,9 @@
       <div id="allcontents">
         <section id="content">
           <div id="welcome">🎀 𝒲𝐸𝐿𝒞♡𝑀𝐸 🎀</div>
-          <a href="/index.html"><button id="home">HOME</button></a>
+          <div id="buttunhome">
+            <a href="/index.html"><button id="home">HOME</button></a>
+          </div>
           <div id="name">𝙍𝘼𝙅𝘼𝙎𝙏𝙃𝘼𝙉𝙄 𝘾𝙃𝙊𝙍𝘼 -</div>
           <div id="abouttext">
             As a frontend developer, I have always been passionate about
