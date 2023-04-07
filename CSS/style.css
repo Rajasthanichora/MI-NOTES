@@ -1,144 +1,142 @@
-@media screen and (max-width: 500px) {
-  /* !font start */
-  * {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  }
-  /* !font end */
-  /* ////////////////////////// */
-  /* !color variable start */
-  :root {
-    --primary-color: white;
-    --black-color: black;
-    --body-color: #f2f2f2;
-    --form-color: #e6e6e6;
-    --savebuttun-color: rgb(90, 90, 90);
-    --iconcard-color: #e3e3e3;
-    --threedoticon-color: rgb(212, 212, 212);
-    --script-color: white;
-  }
-  .dark-theme {
-    --primary-color: #353535;
-    --black-color: white;
-    --body-color: black;
-    --form-color: #464646;
-    --savebuttun-color: rgb(90, 90, 90);
-    --iconcard-color: #e3e3e3;
-    --threedoticon-color: rgb(212, 212, 212);
-    --script-color: black;
-  }
+/* !font start */
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+/* !font end */
+/* ////////////////////////// */
+/* !color variable start */
+:root {
+  --primary-color: white;
+  --black-color: black;
+  --body-color: #f2f2f2;
+  --form-color: #e6e6e6;
+  --savebuttun-color: rgb(90, 90, 90);
+  --iconcard-color: #e3e3e3;
+  --threedoticon-color: rgb(212, 212, 212);
+  --script-color: white;
+}
+.dark-theme {
+  --primary-color: #353535;
+  --black-color: white;
+  --body-color: black;
+  --form-color: #464646;
+  --savebuttun-color: rgb(90, 90, 90);
+  --iconcard-color: #e3e3e3;
+  --threedoticon-color: rgb(212, 212, 212);
+  --script-color: black;
+}
 
-  /* !color variable end */
-  /* ////////////////////////// */
-  /* ! html & body start */
-  html {
-    height: 100%;
-    overflow: hidden;
-  }
-  body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background: transparent;
-    background-color: var(--body-color);
-  }
-  /* ! html & body end */
-  /* ////////////////////////// */
-  /* convert section start  */
-  #convertsection {
-    border: none;
-    width: 100vw;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--body-color);
-  }
-  #allcontents {
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-  }
-  #advertisment {
-    height: 4%;
-    width: 100%;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-  }
-  #searchbar {
-    height: auto;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #contentsec {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 8px;
-  }
+/* !color variable end */
+/* ////////////////////////// */
+/* ! html & body start */
+html {
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: transparent;
+  background-color: var(--body-color);
+}
+/* ! html & body end */
+/* ////////////////////////// */
+/* convert section start  */
+#convertsection {
+  border: none;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--body-color);
+}
+#allcontents {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+#advertisment {
+  height: 4%;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+#searchbar {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#contentsec {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
 
-  #formm {
-    display: flex;
-    padding: 9px;
-    border-radius: 40px;
-    border: none;
-    background-color: var(--form-color);
-    width: 85vw;
-    justify-content: center;
-    align-items: center;
-  }
+#formm {
+  display: flex;
+  padding: 9px;
+  border-radius: 40px;
+  border: none;
+  background-color: var(--form-color);
+  width: 85vw;
+  justify-content: center;
+  align-items: center;
+}
 
-  input[type="search"] {
-    background: transparent;
-    margin: 0;
-    padding: 4px 0px;
-    border: 1px solid transparent;
-    border-radius: unset;
-    width: 100%;
-    font-size: 9px;
-    color: var(--black-color);
-  }
+input[type="search"] {
+  background: transparent;
+  margin: 0;
+  padding: 4px 0px;
+  border: 1px solid transparent;
+  border-radius: unset;
+  width: 100%;
+  font-size: 9px;
+  color: var(--black-color);
+}
 
-  input[type="search"]::placeholder {
-    color: var(--black-color);
-    font-size: 13px;
-    text-align: left;
-  }
-  input[type="search"]:focus {
-    outline: none;
-    caret-color: #196bee;
-  }
+input[type="search"]::placeholder {
+  color: var(--black-color);
+  font-size: 13px;
+  text-align: left;
+}
+input[type="search"]:focus {
+  outline: none;
+  caret-color: #196bee;
+}
 
-  input:focus::placeholder {
-    color: transparent;
-  }
+input:focus::placeholder {
+  color: transparent;
+}
 
-  #searchbtnn {
-    font-size: 6vw;
-    color: var(--black-color);
-  }
+#searchbtnn {
+  font-size: 6vw;
+  color: var(--black-color);
+}
 
-  #cancelbtnn {
-    padding: 0;
-    margin: 0;
-    border: none;
-    background: transparent;
-    font-size: 10px;
-    color: #196bee;
-    display: none;
-  }
+#cancelbtnn {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  font-size: 10px;
+  color: #196bee;
+  display: none;
+}
 
-  #cancelbtnn:active {
-    opacity: 0.9;
-    color: #134faf;
-  }
+#cancelbtnn:active {
+  opacity: 0.9;
+  color: #134faf;
 }
 
 #displayallbox {
@@ -340,3 +338,54 @@
   border: none;
 }
 /* ? DARK MODE BTN END */
+@media (min-width: 600px) and (max-width: 4000px) {
+  input[type="search"]::placeholder {
+    font-size: 15px;
+  }
+  #formm {
+    display: flex;
+    padding: 1vh;
+  }
+  #searchbtnn {
+    font-size: 2vw;
+  }
+  #formm {
+    width: 75vw;
+  }
+  .deletemycard {
+    font-size: 2.1em;
+  }
+  .titalbox {
+    width: 30vw;
+    height: 38px;
+    font-size: 20px;
+  }
+  .boxcontent {
+    width: 30vw;
+    font-size: 11px;
+  }
+  .timebox {
+    margin-top: 0px;
+    width: 70%;
+    font-size: 10px;
+  }
+  .boxes {
+    height: 126px;
+  }
+  #savebuttunwrite {
+    top: 5vh;
+  }
+  #titall {
+    font-size: 3.2em;
+    margin-top: 11vh;
+  }
+  #discript {
+    font-size: 1.8em;
+  }
+  #darkbtnn {
+    font-size: 1vw;
+  }
+  #lightbtnn {
+    font-size: 1vw;
+  }
+}
